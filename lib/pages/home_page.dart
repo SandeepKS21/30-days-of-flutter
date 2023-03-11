@@ -1,20 +1,22 @@
 import 'package:flutter/material.dart';
+// import 'package:http/http.dart' as http;
+// import 'dart:convert';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    const int days = 30;
-
     return Scaffold(
       appBar: AppBar(
-        title: const Text("flutter"),
+        title: const Text("Login"),
       ),
       body: const Center(
-        child: Text("$days of Flutter"),
-      ),
-      // drawer => sidebar
+          child: Text(
+        "Home page",
+        style: TextStyle(
+            color: Colors.blue, fontSize: 40, fontStyle: FontStyle.italic),
+      )),
       drawer: const Drawer(),
     );
   }
