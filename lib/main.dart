@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
 import 'package:flutter_application_1/pages/login_page.dart';
+import 'package:flutter_application_1/pages/register_page.dart';
 import 'package:flutter_application_1/pages/utils/routes.dart';
+import 'package:flutter_application_1/widgets/themes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,19 +18,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       // home: const HomePage(),
       // theme => chnage top nav color
-      theme: ThemeData(primarySwatch: Colors.deepOrange),
+      theme: Mytheme.lighTheme(context),
 
-// "debugShowCheckedModeBanner"=> remove dubug banner from edge of the app
+      // "debugShowCheckedModeBanner"=> remove dubug banner from edge of the app
       debugShowCheckedModeBanner: false,
 
-// routes 2 parameter. staring and function
+      // routes 2 parameter. staring and function
 
-// initialRoute => means default route
-      initialRoute: "/",
+      // initialRoute => means default route
+      initialRoute: MyRoutes.homeRoute,
 
       routes: {
         MyRoutes.loginRoute: (context) => const LoginPage(),
-        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.homeRoute: (context) => const HomePage(),
+        MyRoutes.registerRoute: (context) => const RegisterPage()
         // "/register":(context)=>
       },
     );

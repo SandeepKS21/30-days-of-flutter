@@ -39,6 +39,9 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    // retreving successful register message
+    final successMessage = ModalRoute.of(context)!.settings.arguments;
+
     return Material(
       color: Colors.white,
       // "SingleChildScrollView" will make page scrollable
@@ -61,6 +64,15 @@ class _LoginPageState extends State<LoginPage> {
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.bold),
               ),
+
+              const SizedBox(
+                height: 15,
+              ),
+              if (successMessage != null)
+                Text(
+                  successMessage.toString(),
+                  style: const TextStyle(color: Colors.green, fontSize: 25),
+                ),
 
               Padding(
                 padding: const EdgeInsets.symmetric(
@@ -96,7 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                       validator: (value) {
                         if (value?.isEmpty ?? true) {
                           return "Password cannot be empty";
-                        } 
+                        }
                         return null;
                       },
                     ),

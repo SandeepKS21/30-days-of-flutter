@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets/drawer.dart';
 // import 'package:http/http.dart' as http;
 // import 'dart:convert';
 
@@ -17,7 +18,7 @@ class HomePage extends StatelessWidget {
         style: TextStyle(
             color: Colors.blue, fontSize: 40, fontStyle: FontStyle.italic),
       )),
-      drawer: const Drawer(),
+      drawer: Mydrawr(),
     );
   }
 }
